@@ -38,6 +38,10 @@
             <th scope="row"><?= __('Modified') ?></th>
             <td><?= h($movie->modified) ?></td>
         </tr>
+        <tr>
+            <th scope="row"><?= __('Date Realease') ?></th>
+            <td><?= h($movie->date_release) ?></td>
+        </tr>
     </table>
     <div class="row">
         <h4><?= __('Description') ?></h4>
@@ -54,7 +58,7 @@
                 <th scope="col"><?= __('Start') ?></th>
                 <th scope="col"><?= __('End') ?></th>
                 <th scope="col"><?= __('Created') ?></th>
-                <th scope="col"><?= __('Modified') ?></th>
+                <th scope="col"><?= __('Modified') ?></th
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($movie->showtimes as $showtimes): ?>
@@ -65,7 +69,7 @@
                 <td><?= h($showtimes->start) ?></td>
                 <td><?= h($showtimes->end) ?></td>
                 <td><?= h($showtimes->created) ?></td>
-                <td><?= h($showtimes->modified) ?></td>
+                <td><?= h($showtimes->modified) ?></td
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Showtimes', 'action' => 'view', $showtimes->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Showtimes', 'action' => 'edit', $showtimes->id]) ?>
