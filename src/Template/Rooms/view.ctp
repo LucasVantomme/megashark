@@ -94,27 +94,6 @@
                 <td></td>
             </tr>
             
-            <tr>
-                <td>9H00</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            
-            <tr>
-                <td>10H00</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
         </table>
         <?php endif; ?>
     </div>

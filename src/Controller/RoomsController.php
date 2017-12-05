@@ -36,9 +36,12 @@ class RoomsController extends AppController
     public function view($id = null)
     {
         $room = $this->Rooms->get($id, [
-            'contain' => ['Showtimes']
+            'contain' => ['Showtimes' => function($query) {
+                return $query
+                ->where(['id'=>1]); //modifier where
+            }]
         ]);
-
+        
         $this->set('room', $room);
         $this->set('_serialize', ['room']);
     }
