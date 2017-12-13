@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\I18n\Time;
 
 /**
  * Rooms Controller
@@ -38,7 +39,8 @@ class RoomsController extends AppController
         $room = $this->Rooms->get($id, [
             'contain' => ['Showtimes' => function($query) {
                 return $query
-                ->where(['id'=>1]); //modifier where
+                ->where(['start >='=> new \DateTime('monday this week'),
+                'start <='=> new \DateTime('sunday this week')]);
             }]
         ]);
         
