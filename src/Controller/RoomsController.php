@@ -3,6 +3,7 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\I18n\Time;
+use Cake\Collection\Collection;
 
 /**
  * Rooms Controller
@@ -44,7 +45,13 @@ class RoomsController extends AppController
             }]
         ]);
         
-        $this->set('room', $room);
+        $collection = new Collection($room->    showtimes);
+        $showtimesThisWeek = $collection->groupBy(function ($showtimes) {
+            return $showtimes->start->format('N');
+        });
+        
+        $this->set('showtimesthisweek',$showtimesThisWeek->toArray());
+        $this->set('room', $room);  
         $this->set('_serialize', ['room']);
     }
 

@@ -73,7 +73,6 @@
         
         <table>
             <tr>
-                <th scope="col">#</th>
                 <th scope="col">Lundi</th>
                 <th scope="col">Mardi</th>
                 <th scope="col">Mercredi</th>
@@ -84,14 +83,13 @@
             </tr>
             
             <tr>
-                <td>8H00</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+                <?php for($i = 1; $i <= 7 ; $i++): ?>
+                    <td>
+                        <?php foreach($showtimesthisweek[$i] as $showtime): ?>
+                            <?php echo $showtime->movie->name; ?>
+                        <?php endforeach; ?>
+                    </td>
+                <?php endfor; ?>
             </tr>
             
         </table>
